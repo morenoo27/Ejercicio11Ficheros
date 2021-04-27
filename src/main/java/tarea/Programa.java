@@ -45,9 +45,12 @@ public class Programa {
      */
     private static void JSONporAplicacion(ArrayList<App> listaDeAplicaciones, String directorio) {
 
+        ArrayList<App> listaUnicaApp = new ArrayList<>();
+        
         for (App aplicacion : listaDeAplicaciones) {
             
-            ArrayList<App> listaUnicaApp = new ArrayList<>();
+            listaUnicaApp.clear();
+            
             listaUnicaApp.add(aplicacion);
             
             String idArchivo = "/" + listaUnicaApp.get(0).getNombre() + ".json";
@@ -57,7 +60,22 @@ public class Programa {
             } catch (IOException ex) {
                 Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            listaUnicaApp.clear();
         }
  
     }
+//    
+//    public static void generarArchivosListaJson(ArrayList<App> listaApp) throws IOException {
+////Crea un una lista Map
+//        ObjectMapper mapApp = new ObjectMapper();
+////Configura el Map anterior
+//        mapApp.configure(SerializationFeature.INDENT_OUTPUT, true);
+////For que recorre la lista con los objetos App y pasa los valores al la lista Map con el formato .json
+//        for (App app : listaApp) {
+//
+//            mapApp.writeValue(new File(app.getNombre() + ".json"), app);
+//        }
+//
+//    }
 }
