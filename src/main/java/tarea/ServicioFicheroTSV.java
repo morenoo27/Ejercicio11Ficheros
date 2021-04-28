@@ -26,12 +26,12 @@ public class ServicioFicheroTSV {
     }
 
     /**<html><pre>
-     * Genera un fichero con el formato tsv("tab separated values") a partir de
-     * una lista que previamente hemos generado.
-     * El metodo lo que realiza es una escritura simple de todos los valores que
-     * tiene cada uno de los valores de cada una de las aplicaciones previamente 
-     * creadas. Cada uno de los valores, aunque en el toString se separen por
-     * comas, se reemplazan dichas comas por tabulaciones.
+     *Genera un fichero con el formato tsv("tab separated values") a partir de
+     *una lista que previamente hemos generado.
+     *El metodo lo que realiza es una escritura simple de todos los valores que
+     *tiene cada uno de los valores de cada una de las aplicaciones previamente 
+     *creadas. Cada uno de los valores, aunque en el toString se separen por
+     *comas, se reemplazan dichas comas por tabulaciones.
      * </pre>
      * @param listaAplicaciones Lista con las aplicaciones que vamosa a escirbir
      * en el archivo
