@@ -41,41 +41,20 @@ public class Programa {
      * Metodo que crea un archivo de extension .json por cada una de las
      * aplicaciones que tengamos en la lista
      *
-     * @param listaDeAplicaciones
+     * @param listaDeAplicaciones Lista con los objetos de tipo App
+     * @param directorio Destino de creacion del archivo
      */
     private static void JSONporAplicacion(ArrayList<App> listaDeAplicaciones, String directorio) {
 
-        ArrayList<App> listaUnicaApp = new ArrayList<>();
-        
-        for (App aplicacion : listaDeAplicaciones) {
-            
-            listaUnicaApp.clear();
-            
-            listaUnicaApp.add(aplicacion);
-            
-            String idArchivo = "/" + listaUnicaApp.get(0).getNombre() + ".json";
-            
+        listaDeAplicaciones.forEach(aplicacion -> {
+
+            String idArchivo = "/" + aplicacion.getNombre() + ".json";
+
             try {
-                ServicioFicheroJSON.escribirFicheroJSON(listaUnicaApp, directorio + idArchivo);
+                ServicioFicheroJSON.escribirFicheroJSON(aplicacion, directorio + idArchivo);
             } catch (IOException ex) {
                 Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            listaUnicaApp.clear();
-        }
- 
+        });
     }
-//    
-//    public static void generarArchivosListaJson(ArrayList<App> listaApp) throws IOException {
-////Crea un una lista Map
-//        ObjectMapper mapApp = new ObjectMapper();
-////Configura el Map anterior
-//        mapApp.configure(SerializationFeature.INDENT_OUTPUT, true);
-////For que recorre la lista con los objetos App y pasa los valores al la lista Map con el formato .json
-//        for (App app : listaApp) {
-//
-//            mapApp.writeValue(new File(app.getNombre() + ".json"), app);
-//        }
-//
-//    }
 }
