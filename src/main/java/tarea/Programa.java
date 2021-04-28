@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.bind.JAXBException;
 
 /**
  *
@@ -33,6 +34,10 @@ public class Programa {
         ServicioFicheroTSV.escribirTSV(listaDeAplicaciones, DIRECTORIOTSV + "/Aplicaciones.tsv");
 
         ServicioFicheroJSON.escribirFicheroJSON(listaDeAplicaciones, DIRECTORIOJSON + "/Aplicaciones.json");
+        
+        escribirFicheroXML(listaDeAplicaciones, DIRECTORIOXML);
+        
+        
 
         JSONporAplicacion(listaDeAplicaciones, DIRECTORIOAPLICACIONES);
     }
@@ -56,5 +61,25 @@ public class Programa {
                 Logger.getLogger(Programa.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+    }
+
+    /**<html>
+     * Metodo que crea un archivo de extension .xml con todas las
+     * aplicaciones que tengamos en la lista.
+     * <pre>
+     *Se crea por medio de la instanciacion de un objeto de tipo "CatalogoApp"
+     * </pre>
+     * @param listaDeAplicaciones Lista con los objetos de tipo App
+     * @param directorio Destino de creacion del archivo
+     */
+    private static void escribirFicheroXML(ArrayList<App> listaDeAplicaciones, String directorio) {
+        
+        CatalogoApp catalogo = new CatalogoApp(listaDeAplicaciones);
+        
+        try {
+            ServicioFicheroXML.escribirXML(catalogo, directorio + "/Aplicaciones.xml");
+        }catch (JAXBException e){
+            System.out.println(e.getMessage());
+        }
     }
 }

@@ -248,19 +248,19 @@ public class App {
     }
 
     /** <html><pre>
-     * Metodo que crea una fecha totalmente aleatoria.
-     *     -Primero se crean el mes y el anio de manera aleatoria usando un objeto
-     * de la clase Ramdon
-     *     -Segundo, dependiendo del mes tendremos o 30 o 31, sin contar con
-     * Febrero.
-     *         -Los meses de 30 dias son : 4(Abril), 6(Junio), 9(Septimebte),
-     *          11(Noviembre)
-     *         -Los que tienen 31 son: 1(Enero), 3(Marzo), 5(Mayo), 7(Julio),
-     *          8(Agosto), 10(Octubre), 12(Diciembre)
-     *     -Si sale Febrero, dependiendo de la fecha de referencia(Fecha creada
-     * a partir del anio creado de manera aleatoria con el mes y el dia no
-     * importantes, por eso el numero 1 en mabos), si el anio es bisiesto se
-     * generaran hasta 29. Si no es bisiesto se generaran hasta 28
+     *Metodo que crea una fecha totalmente aleatoria.
+     *    -Primero se crean el mes y el anio de manera aleatoria usando un objeto
+     *de la clase Ramdon
+     *    -Segundo, dependiendo del mes tendremos o 30 o 31, sin contar con
+     *Febrero.
+     *        -Los meses de 30 dias son : 4(Abril), 6(Junio), 9(Septimebte),
+     *         11(Noviembre)
+     *        -Los que tienen 31 son: 1(Enero), 3(Marzo), 5(Mayo), 7(Julio),
+     *         8(Agosto), 10(Octubre), 12(Diciembre)
+     *    -Si sale Febrero, dependiendo de la fecha de referencia(Fecha creada
+     *a partir del anio creado de manera aleatoria con el mes y el dia no
+     *importantes, por eso el numero 1 en mabos), si el anio es bisiesto se
+     *generaran hasta 29. Si no es bisiesto se generaran hasta 28
      * </pre>
      *
      * @return Fecha creada de amnera aleatoria
@@ -323,10 +323,10 @@ public class App {
     }
     
     /** <html><pre>
-     * Metodo que realiza una secuencia de creaciones de objetos de tipo App.
-     * La cantidad de repeticiones se tiene que introducir manualmente.
-     * La creacion de la App se realiza con el metodo de la clase App 
-     * "crearAleatorio"
+     *Metodo que realiza una secuencia de creaciones de objetos de tipo App.
+     *La cantidad de repeticiones se tiene que introducir manualmente.
+     *La creacion de la App se realiza con el metodo de la clase App 
+     *"crearAleatorio"
      * </pre>
      *
      * @param repeticiones Numero de veces que re repetira el bucle
