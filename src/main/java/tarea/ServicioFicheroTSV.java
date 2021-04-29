@@ -18,7 +18,7 @@ public class ServicioFicheroTSV {
 
     public static void main(String[] args) {
         
-        ArrayList<App> listaAplicaciones = generarListaApp(10);
+        ArrayList<App> listaAplicaciones = App.generarListaApp(10);
 
         String idArchivo = "aplicaciones.tsv";
         
@@ -65,24 +65,5 @@ public class ServicioFicheroTSV {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    /**<html><pre>
-     * Metodo que realiza una secuencia de creaciones de objetos de tipo App.
-     * La cantidad de repeticiones se tiene que introducir manualmente.
-     * </pre>
-     * @param repeticiones Numero de veces que re repetira el bucle
-     * @return Lista con todos los objetos de tipo App que se han creado
-     * </html>
-     */
-    private static ArrayList<App> generarListaApp(int repeticiones) {
-
-        ArrayList<App> lista = new ArrayList<>();
-        
-        for (int i = 0; i < repeticiones; i++) {
-            lista.add(App.crearAleatorio());
-        }
-
-        return lista;
     }
 }
