@@ -10,17 +10,25 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  *
  * @author aleja
  */
+
+@XmlRootElement(name = "aplicacion")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class App {
 
     private final int codigoUnico;
     private String nombre;
     private String descripcion;
     private double tamanio;
+    @XmlJavaTypeAdapter(value = LocalDateAdapter.class)
     private LocalDate fechaCreacion;
 
     private static int contadorCodigoUnico = 1;

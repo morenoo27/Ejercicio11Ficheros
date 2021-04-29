@@ -37,8 +37,6 @@ public class Programa {
         
         escribirFicheroXML(listaDeAplicaciones, DIRECTORIOXML);
         
-        
-
         JSONporAplicacion(listaDeAplicaciones, DIRECTORIOAPLICACIONES);
     }
 
@@ -76,10 +74,13 @@ public class Programa {
         
         CatalogoApp catalogo = new CatalogoApp(listaDeAplicaciones);
         
+        String nombreAplicaion = "Aplicaciones.xml";
+        
         try {
-            ServicioFicheroXML.escribirXML(catalogo, directorio + "/Aplicaciones.xml");
+            ServicioFicheroXML.escribirXML(catalogo, directorio + "/" + nombreAplicaion);
         }catch (JAXBException e){
             System.out.println(e.getMessage());
+            e.printStackTrace(); //METODO QUE TE DICE CUAL ES EL ERROR EN CUALQUIER SITUACION
         }
     }
 }
